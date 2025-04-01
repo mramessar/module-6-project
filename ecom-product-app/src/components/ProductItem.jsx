@@ -1,12 +1,19 @@
 function ProductItem({ product }) {
-    return (
-      <div className="product-item">
-        <h2>{product.name}</h2>
-        <p><strong>File Completion Required:</strong> {product.completion}</p>
-        <p>{product.description}</p>
+  return (
+    <div className="product-item">
+      <div className="product-info">
+        <span>{product.name}</span>
+        <span>{product.completion}% Complete</span>
+        <div className="progress-bar">
+          <div
+            className="progress"
+            style={{ width: `${product.completion}%` }}
+          ></div>
+        </div>
       </div>
-    );
-  }
-  
-  export default ProductItem;
-  
+      <p>{product.description}</p>
+    </div>
+  );
+}
+
+export default ProductItem;
